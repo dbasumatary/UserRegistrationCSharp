@@ -48,5 +48,18 @@ namespace UserRegistrationCSharp
             else
                 Console.WriteLine("\nYou've entered an invalid email. Please try again.");
         }
+
+        //UC4: Valid Mobile No (country code followed by space and 10-digit number)
+        public void ValidateMobile()
+        {
+            Console.Write("\nEnter the user mobile number: ");
+            string phonePattern = @"^(91)[\s][1-9][0-9]{9}$";
+            Regex regexObject = new Regex(phonePattern);
+            string userInput = Console.ReadLine();
+            if (regexObject.IsMatch(userInput))
+                Console.WriteLine("\n" + userInput + " is a valid mobile number");
+            else
+                Console.WriteLine("\nYou've entered an invalid number. Please try again.");
+        }
     }
 }
