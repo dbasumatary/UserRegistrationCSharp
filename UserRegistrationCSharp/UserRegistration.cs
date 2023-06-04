@@ -35,5 +35,18 @@ namespace UserRegistrationCSharp
             else
                 Console.WriteLine("\nYou've entered an invalid last name. Please try again.");
         }
+
+        //UC3: User need to input valid email address
+        public void ValidateEmail()
+        {
+            Console.Write("\nEnter the email of user: ");
+            string emailName = @"^[a-z][a-zA-Z0-9.+-]{2,}@[a-z0-9]+[.][a-z]{2,3}[.]?[a-z]{0,3}$";
+            Regex regexObject = new Regex(emailName);
+            string userInput = Console.ReadLine();
+            if (regexObject.IsMatch(userInput))
+                Console.WriteLine("\n" + userInput + " is a valid email");
+            else
+                Console.WriteLine("\nYou've entered an invalid email. Please try again.");
+        }
     }
 }
