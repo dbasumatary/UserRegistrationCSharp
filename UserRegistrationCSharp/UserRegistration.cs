@@ -22,5 +22,18 @@ namespace UserRegistrationCSharp
             else
                 Console.WriteLine("\nYou've entered an invalid first name. Please try again.");
         }
+
+        //UC2: User need to input valid last name
+        public void ValidateLastName()
+        {
+            Console.Write("\nEnter the last name: ");
+            string lastName = @"^[A-Z][a-z]{2,}$";
+            Regex regexObject = new Regex(lastName);
+            string userInput = Console.ReadLine();
+            if (regexObject.IsMatch(userInput))
+                Console.WriteLine("\n" + userInput + " is a valid last name");
+            else
+                Console.WriteLine("\nYou've entered an invalid last name. Please try again.");
+        }
     }
 }

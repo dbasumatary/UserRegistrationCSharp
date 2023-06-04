@@ -7,6 +7,7 @@
             Console.WriteLine("Welcome to User Validation system");
             UserRegistration userRegistration = new UserRegistration();
             userRegistration.ValidateFirstName();
+            userRegistration.ValidateLastName();
         }
     }
 }
