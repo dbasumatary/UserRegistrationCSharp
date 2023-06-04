@@ -61,5 +61,18 @@ namespace UserRegistrationCSharp
             else
                 Console.WriteLine("\nYou've entered an invalid number. Please try again.");
         }
+
+        //UC5: Valid Password (Minimum 8 characters)
+        public void ValidatePassword()
+        {
+            Console.Write("\nEnter the password: ");
+            string passwordPattern = @"^[a-zA-Z0-9~!@#$&*-]{8,}$";
+            Regex regexObject = new Regex(passwordPattern);
+            string userInput = Console.ReadLine();
+            if (regexObject.IsMatch(userInput))
+                Console.WriteLine("\n" + userInput + " is a valid password");
+            else
+                Console.WriteLine("\nYou've entered an invalid password. Please try again.");
+        }
     }
 }

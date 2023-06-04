@@ -10,6 +10,7 @@
             userRegistration.ValidateLastName();
             userRegistration.ValidateEmail();
             userRegistration.ValidateMobile();
+            userRegistration.ValidatePassword();
         }
     }
 }
