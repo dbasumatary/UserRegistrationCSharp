@@ -65,10 +65,11 @@ namespace UserRegistrationCSharp
         //UC5: Valid Password (Minimum 8 characters)
         //UC6: Valid Password (Atleast one uppercase)
         //UC7: Valid Password (Atleast one Numeric)
+        //UC8: Valid Password (One Special Character)
         public void ValidatePassword()
         {
             Console.Write("\nEnter the password: ");
-            string passwordPattern = @"^(?=.*[A-Z])(?=.*[1-9])[a-zA-Z0-9~!@#$&*-]{8,}$";
+            string passwordPattern = @"^(?=.*[A-Z])(?=.*[1-9])(?=.*[~!@#$&*-])[a-zA-Z0-9~!@#$&*-]{8,}$";
             Regex regexObject = new Regex(passwordPattern);
             string userInput = Console.ReadLine();
             if (regexObject.IsMatch(userInput))
