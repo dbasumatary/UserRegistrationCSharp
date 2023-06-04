@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Welcome to User Validation system");
+            UserRegistration userRegistration = new UserRegistration();
+            userRegistration.ValidateFirstName();
         }
     }
 }
