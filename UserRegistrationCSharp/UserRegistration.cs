@@ -37,16 +37,21 @@ namespace UserRegistrationCSharp
         }
 
         //UC3: User need to input valid email address
-        public void ValidateEmail()
+        public bool ValidateEmail(string emailInput)
         {
-            Console.Write("\nEnter the email of user: ");
-            string emailName = @"^[a-z][a-zA-Z0-9.+-]{2,}@[a-z0-9]+[.][a-z]{2,3}[.]?[a-z]{0,3}$";
+            //string emailName = @"^[a-z][a-zA-Z0-9.+-]{2,}@[a-z0-9]+[.][a-z]{2,3}[.]?[a-z]{0,3}$";
+            string emailName = @"^[a-z]+([+_.-]?[A-Za-z0-9])*[@][A-Za-z0-9]+([.][a-z]{2,3}){1,2}$";
             Regex regexObject = new Regex(emailName);
-            string userInput = Console.ReadLine();
-            if (regexObject.IsMatch(userInput))
-                Console.WriteLine("\n" + userInput + " is a valid email");
+            if (regexObject.IsMatch(emailInput))
+            {
+                Console.WriteLine("\n" + emailInput + " is a valid email");
+                return true;
+            }
             else
+            {
                 Console.WriteLine("\nYou've entered an invalid email. Please try again.");
+                return false;
+            }
         }
 
         //UC4: Valid Mobile No (country code followed by space and 10-digit number)

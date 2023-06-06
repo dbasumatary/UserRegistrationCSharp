@@ -8,7 +8,7 @@
             UserRegistration userRegistration = new UserRegistration();
             userRegistration.ValidateFirstName();
             userRegistration.ValidateLastName();
-            userRegistration.ValidateEmail();
+            userRegistration.ValidateEmail("abc.100@abc.com.au");
             userRegistration.ValidateMobile();
             userRegistration.ValidatePassword();
         }
